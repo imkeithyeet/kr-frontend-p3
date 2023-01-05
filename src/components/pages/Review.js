@@ -44,12 +44,12 @@ console.log(items)
         e.preventDefault();
         updateReview(currentReview.id, currentReview);
         }}>
-            <label>Name:</label>
-            <input placeholder="Your Name..." type="text" name="name" value={currentReview.name} onChange={e => setCurrentReview({ ...currentReview, name: e.target.value })} />
-            <label>Description:</label>
+            <label >Name:</label>
+            <input type="text" name="name" value={currentReview.name} onChange={e => setCurrentReview({ ...currentReview, name: e.target.value })} />
+            <label >Description:</label>
             <input type="text" name="description" value={currentReview.description} onChange={e => setCurrentReview({ ...currentReview, description: e.target.value })} />
             <label>Rating:</label>
-            <input type="text" name="rating" value={currentReview.rating} onChange={e => setCurrentReview({ ...currentReview, rating: e.target.value })} />
+            <input type="text" name="rating"  value={currentReview.rating} onChange={e => setCurrentReview({ ...currentReview, rating: e.target.value })} />
 
             <button type="submit">Update Review</button>
             </form>
@@ -64,11 +64,11 @@ console.log(items)
             e.target.rating.value = '';
             }}>
             <label>Name:</label>
-            <input type="text" name="name" />
+            <input placeholder="name..." type="text" name="name" />
             <label>Description:</label>
-            <input type="text" name="description" />
+            <input placeholder="description..." type="text" name="description" />
             <label>Rating:</label>
-            <input type="text" name="rating" />
+            <input placeholder="rating..." type="text" name="rating" />
             <button type="submit">Add Review</button>
         </form>
         </div>
