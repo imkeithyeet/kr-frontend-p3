@@ -11,7 +11,6 @@ function ReviewList({reviews}) {
        rating={review.rating}
        />
     })
-    console.log(mappedReviews);
 
   return (
     <div>
