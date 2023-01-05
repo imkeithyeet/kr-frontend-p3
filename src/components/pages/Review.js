@@ -8,19 +8,42 @@ function Review() {
   const [editing, setEditing] = useState(false);
   const [currentReview, setCurrentReview] = useState({ id: null, name: '', description: '', rating: "" });
 
-const addReview = review => {
-  review.id = items.length + 1;
-  setItems([...items, review]);
-}
+  const addReview = (review) => {
+    fetch('http://localhost:3000/reviews', {
+    method: 'POST',
+    body: JSON.stringify(review),
+    headers: {
+    'Content-Type': 'application/json'
+    }
+    })
+    .then((response) => response.json())
+    .then((newReview) => {
+    setItems([...items, newReview]);
+    });
+    };
+
+    
 
 const deleteReview = id => {
   setItems(items.filter(review => review.id !== id));
 }
 
-const editReview = review => {
-  setEditing(true);
-  setCurrentReview({ id: review.id, name: review.name, description: review.description, rating: review.rating });
-}
+const editReview = (review) => {
+  fetch(`http://localhost:3000/reviews/${review.id}`, {
+  method: 'PATCH',
+  body: JSON.stringify(review),
+  headers: {
+  'Content-Type': 'application/json'
+  }
+  })
+  .then((response) => response.json())
+  .then((updatedReview) => {
+  const updatedReviews = items.map((r) =>
+  r.id === updatedReview.id ? updatedReview : r
+  );
+  setItems(updatedReviews);
+  });
+  };
 
 const updateReview = (id, updatedReview) => {
   setEditing(false);
@@ -50,7 +73,7 @@ console.log(items)
             <input type="text" name="description" value={currentReview.description} onChange={e => setCurrentReview({ ...currentReview, description: e.target.value })} />
             <label>Rating:</label>
             <input type="text" name="rating" value={currentReview.rating} onChange={e => setCurrentReview({ ...currentReview, rating: e.target.value })} />
-
+        
             <button type="submit">Update Review</button>
             </form>
             </div>
@@ -66,9 +89,6 @@ console.log(items)
             <label>Name:</label>
             <input type="text" name="name" />
             <label>Description:</label>
-            <input type="text" name="description" />
-            <label>Rating:</label>
-            <input type="text" name="rating" />
             <button type="submit">Add Review</button>
         </form>
         </div>
@@ -84,7 +104,7 @@ console.log(items)
         </div>
         ))}
         </div>
-    <ReviewList items={items} />
+
   </div>
   );
 }

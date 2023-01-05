@@ -1,10 +1,10 @@
 {
-  "foods": [
+  "reviews": [
     {
       "id": 1,
-      "title": "Shrimp Chop Suey",
-      "image": "https://www.bitesofberi.com/wp-content/uploads/2022/03/shrimp-chop-suey-3-768x1024.jpg",
-      "price": "$12.00"
+      "name": "Shrimp Chop Suey",
+      "description": "https://www.bitesofberi.com/wp-content/uploads/2022/03/shrimp-chop-suey-3-768x1024.jpg",
+      "rating": "$12.00"
     },
     {
       "id": 2,
