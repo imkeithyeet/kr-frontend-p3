@@ -79,7 +79,16 @@ header h1 {
   padding:10px;
   color: rgb(158, 158, 210);
 }
-
+.P2{
+  position:relative;
+  top:20px;
+}
+.P3{
+  position:relative;
+  top:190px;
+  font-size: 26px;
+  color: #b7f3f8;
+}
 .h3{
   text-align: left;
   position: relative;
@@ -254,16 +263,7 @@ li{
   top:-0px;
 }
 
-.P2{
-  color:#b7f3f8;
-  font-size: 25px;
-  margin-left:auto;
-  margin-right:auto;
-  position:relative;
-  left: -100px;
-  bottom:-700px;  
-  
-}
+
 button{
   color: rgb(11, 0, 0);
   padding-left: 15px;
