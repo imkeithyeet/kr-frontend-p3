@@ -27,6 +27,7 @@ code {
 form{
 
  position: relative;
+ left:-20px;
  text-align: center;
  margin-bottom: 50px;
  border-style: solid;
@@ -153,7 +154,7 @@ main {
 label {
   font-weight: bold;
   position: relative;
-  left: -140px;
+  left: -155px;
   color:rgb(215, 244, 169)
   
 }
@@ -211,9 +212,17 @@ input:focus {
   .cards {
     display: flex;
     flex-wrap: wrap;
+    padding: 0.5rem;
+    
 
   }
+li{
+  display: flex;
+  padding: 0.4rem;
+  color:#2d5053;
+  margin: 20px;
 
+}
 .card {
     width: calc(20% - 2rem);
     margin-left:auto;
