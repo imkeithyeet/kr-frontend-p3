@@ -6,9 +6,9 @@ function MenuList({foods}) {
     const mappedFoods= foods?.map((food) => {
       return <MenuItem
        key={food.id}
-       title={food.title}
-       image={food.image}
-       price={food.price}
+       name={food.name}
+       img_url={food.img_url}
+       spice={food.spice}
        />
     })
 

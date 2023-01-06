@@ -30,13 +30,78 @@
   </head>
   <body class="Body">
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div class="navigation">
-      <a class="button" href="/about">About</a>
-      <a class="button" href="/">Home</a>
-      <a class="button" href="/shoppingcart">Cart</a>
+    <body>
+      <style>
+        /* Style the navigation bar */
+        .sidebar {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        /* Style the links inside the navigation bar */
+        .sidebar a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        /* Change color on hover */
+        .sidebar a:hover {
+          color: #F1F1F1;
+        }
+        /* Style the close button */
+        .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        /* Style the toggle button */
+        .openbtn {
+          font-size: 20px;
+          cursor: pointer;
+          background-color: #111;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+        }
+        .openbtn:hover {
+          background-color: #444;
+        }
+      </style>
+      <!-- Create a button that opens the navigation bar -->
+      <button class="openbtn" onclick="openNav()">&#9776;</button>
+      <!-- Create the navigation bar -->
+      <div id="mySidebar" class="sidebar">
+        <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="button" href="/about">About</a>
+      <a class="button" href="/">Menu</a>
+      <a class="button" href="/Reviews">Reviews</a>
 
-    </div>
+      </div>
+      <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "196px";
+        }
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+        }
+      </script>
+    </body>
     <div id="root"></div>
+    
+
+    
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

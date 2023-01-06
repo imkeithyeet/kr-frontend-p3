@@ -8,8 +8,8 @@ function Search({setSearch , search}) {
   }
 
   return (
-    <div className="searchbar">
-      <label htmlFor="search">Search Menu:</label>
+    <div className="searchBar">
+      <label className="Search">Search Menu:</label>
       <input
         type="text"
         value={search}

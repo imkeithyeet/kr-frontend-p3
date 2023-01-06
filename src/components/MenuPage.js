@@ -13,7 +13,8 @@ function MenuPage() {
     .then (data=>setFoods(data))
   },[])
   const displayedFoods = foods.filter((food) => {
-    return food.title.toLowerCase().includes(search.toLowerCase());
+    console.log(food)
+    return food.name.toLowerCase().includes(search.toLowerCase());
   })
 
 
