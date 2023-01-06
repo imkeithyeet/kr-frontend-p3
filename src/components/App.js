@@ -5,6 +5,7 @@ import Review from "./pages/Review";
 import Home from "./pages/Home"
 import About from "./pages/About";
 import MenuItem from "./MenuItem";
+import Contact from "./Contact";
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
                 </Route>
                 <Route path="/foods/:id">
                     <MenuItem />
+                </Route>
+                <Route path="/contact">
+                    <Contact />
                 </Route>
             </Switch>
         </div>
