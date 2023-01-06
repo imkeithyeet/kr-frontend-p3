@@ -5,10 +5,9 @@ import ReviewList from "./ReviewList"
 const API="http://localhost:9393/reviews"
 
 function Review() {
-  const initialReview = { id: null, name: '', description: '', rating: "" }
   const [items, setItems] = useState([]);
   const [editing, setEditing] = useState(false);
-  const [currentReview, setCurrentReview] = useState(initialReview);
+  const [currentReview, setCurrentReview] = useState({ id: null, name: '', description: '', rating: "" });
 
   const addReview = (review) => {
     fetch('http://localhost:9393/reviews', {
@@ -32,11 +31,6 @@ function Review() {
       setItems(remainingReviews);
       });
       };
-
-      const editReviewForm = (review) => {
-        setEditing(true);
-        setCurrentReview(review);
-      }
 const editReview = (review) => {
   fetch(`http://localhost:9393/reviews/${review.id}`, {
   method: 'PATCH',
@@ -47,12 +41,17 @@ const editReview = (review) => {
   })
   .then((response) => response.json())
   .then((updatedReview) => {
-    setEditing(false);
-    setItems(items.map(review => (review.id === updatedReview.id ? updatedReview : review)));
-    setCurrentReview(initialReview)
-  })}
+  const updatedReviews = items.map((r) =>
+  r.id === updatedReview.id ? updatedReview : r
+  );
+  setItems(updatedReviews);
+  });
+  };
 
-
+const updateReview = (id, updatedReview) => {
+  setEditing(false);
+  setItems(items.map(review => (review.id === id ? updatedReview : review)));
+}
 
   useEffect(() =>{
     fetch(API)
@@ -71,7 +70,7 @@ console.log(items)
         <div>
           <form  onSubmit={e => {
           e.preventDefault();
-          editReview(currentReview);
+          updateReview(currentReview.id, currentReview);
           }}>
               <label>Name:</label>
               <input  type="text" name="name" value={currentReview.name} onChange={e => setCurrentReview({ ...currentReview, name: e.target.value })} />
@@ -104,24 +103,14 @@ console.log(items)
           </form>
           </div>
           )}
-          <div style={{
-            borderWidth: '3px',
-            borderStyle: 'solid',
-            borderColor: 'black',
-            padding: '50px'
-          }}>
+          <div className ="review-container">
           {items.map(review => (
-          <div  style={{
-            borderWidth: '2px',
-            borderStyle: 'solid',
-            borderColor: 'black',
-            padding: '50px'
-          }} key={review.id}>
+          <div  className ="review-box" key={review.id}>
           <h3>{review.name}</h3>
           <p>{review.description}</p>
           <p>{review.rating}</p>
           <button onClick={() => deleteReview(review.id)}>Delete</button>
-          <button onClick={() => editReviewForm(review)}>Edit</button>
+          <button onClick={() => editReview(review)}>Edit</button>
           </div>
           ))}
           </div>
