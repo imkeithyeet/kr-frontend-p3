@@ -72,12 +72,12 @@ header h1 {
   font-size: 55px;
 }
 
-.p{
+p{
   position:relative;
-  top:41px;
-  text-align: left;
+  top:17px;
+  text-align: center;
   padding:10px;
-  color: rgb(158, 158, 210);
+  color:#000000;
 }
 .P2{
   position:relative;
@@ -92,10 +92,11 @@ header h1 {
   font-size: 26px;
   color: #b7f3f8;
 }
-.h3{
-  text-align: left;
+h3{
+  color: #c2f6fa;
+  text-align: center;
   position: relative;
-  bottom:-30px;
+  bottom:-11px;
   padding:10px;
   word-spacing: 9px;
 }
@@ -115,6 +116,7 @@ button {
   cursor: pointer;
   box-shadow:2px 2px 2px;
   position: relative;
+  top: 37px;
 }
 .navigation{
   position: relative;
