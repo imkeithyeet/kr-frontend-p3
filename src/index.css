@@ -81,7 +81,10 @@ header h1 {
 }
 .P2{
   position:relative;
-  top:20px;
+  top:710px;
+  font-size: 25px;
+  color:#b7f3f8;
+  text-align: center;
 }
 .P3{
   position:relative;
