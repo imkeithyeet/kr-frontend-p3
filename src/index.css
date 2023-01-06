@@ -12,12 +12,17 @@ code {
 }
 
 .Body {
-  background-color: #afb6b9;
+  background-color: #648290;
+  /* background-image: url("http://loveisinmytummy.com/wp-content/uploads/2017/07/New-Blue-Background-Main-2.jpg");
+  background-attachment: fixed;
+  background-position: left;
+  background-size: 60px; */
   
 }
 .r{
   position: relative;
-  top: -39px;
+  top: 5px;
+
 }
 form{
 
@@ -25,6 +30,7 @@ form{
  text-align: center;
  margin-bottom: 50px;
  border-style: solid;
+ border-color: rgb(207, 206, 206) transparent;
 }
 
 header h1 {
@@ -68,7 +74,8 @@ header h1 {
   position:relative;
   top:41px;
   text-align: left;
-  padding:10px
+  padding:10px;
+  color: rgb(158, 158, 210);
 }
 
 .h3{
@@ -144,10 +151,10 @@ main {
 
 
 label {
-  
   font-weight: bold;
   position: relative;
   left: -140px;
+  color:rgb(215, 244, 169)
   
 }
 .div{
@@ -181,6 +188,7 @@ input {
 .Search{
   position:relative;
   left:-113px;
+  color:#FFA52C;
 
 }
 
@@ -217,7 +225,7 @@ input:focus {
 /* <<<<<<< HEAD */
 
 .H5{
-  color:rgb(0, 0, 0);
+  color:#FFA52C;
   font-size: 45px;
   text-decoration: underline;
   position:absolute;
@@ -228,13 +236,14 @@ input:focus {
 }
 
 .P1{
-  color:rgb(0, 0, 0);
+  color:#b7f3f8;
   font-size: 30px;
   position:relative;
   top:200px;
 }
 
 .P2{
+  color:#b7f3f8;
   font-size: 25px;
   margin-left:auto;
   margin-right:auto;

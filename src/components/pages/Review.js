@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from "react";
 import ReviewList from "./ReviewList"
-// import './Review.css'
 
 const API="http://localhost:9393/reviews"
 
@@ -66,14 +65,14 @@ console.log(items)
 
       <div>
         <div className="review-container">
-        <h1 className="r" style={{color: "blue"}}>Reviews</h1>
+        <h1 className="r" style={{color: "#FFA52C"}}>Reviews</h1>
         {editing ? (
         <div>
           <form  onSubmit={e => {
           e.preventDefault();
           editReview(currentReview);
           }}>
-              <label>Name:</label>
+              <label >Name:</label>
               <input  type="text" name="name" value={currentReview.name} onChange={e => setCurrentReview({ ...currentReview, name: e.target.value })} />
               <label className="P">Description:</label>
               <input type="text" name="description" value={currentReview.description} onChange={e => setCurrentReview({ ...currentReview, description: e.target.value })} />
@@ -107,14 +106,14 @@ console.log(items)
           <div style={{
             borderWidth: '3px',
             borderStyle: 'solid',
-            borderColor: 'black',
+            borderColor: 'white',
             padding: '50px'
           }}>
           {items.map(review => (
           <div  style={{
             borderWidth: '2px',
             borderStyle: 'solid',
-            borderColor: 'black',
+            borderColor: 'white',
             padding: '50px'
           }} key={review.id}>
           <h3>{review.name}</h3>
